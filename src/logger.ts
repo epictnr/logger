@@ -1,12 +1,12 @@
 import winston from 'winston'
-import {JsonOptions} from 'logform'
+import { JsonOptions } from 'logform'
 
 export type Environment = 'development' | 'production'
 
 export interface Config {
   environment?: Environment
   level: string
-  meta?: object
+  meta?: any
 }
 
 const levelMap = {
@@ -35,11 +35,11 @@ const createFormat = (environment: Environment) => {
 
   return winston.format.combine(
     winston.format.timestamp(),
-    winston.format.json(jsonFormatOptions)
+    winston.format.json(jsonFormatOptions),
   )
 }
 
-export const createLogger = (config: Config) => {
+export const createLogger = (config: Config): winston.Logger => {
   const logger = winston.createLogger({
     level: config.level,
     format: createFormat(config.environment ? config.environment : 'production'),
