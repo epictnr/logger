@@ -34,7 +34,7 @@ const logger = createLogger({
 })
 ```
 
-### How to publish::
+### How to publish:
 
 ```console
 $ npm pub
