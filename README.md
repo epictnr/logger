@@ -1,18 +1,13 @@
-epicntr logger
+Epicntr Logger 📃
 ======
 
-Логгер на основе winston
+Logger based on [Winston](https://github.com/winstonjs/winston)
 
-### Для публикации пакета:
+*(the part of [micro-starter](https://github.com/epictnr/micro-starter-kit) framework)*
 
-```bash
-npm pub
-```
+### How to use
 
-
-Пример:
-
-```bash
+```js
 import { createLogger } from './logger'
 
 const logger = createLogger({
@@ -25,9 +20,9 @@ const logger = createLogger({
 logger.info('test', { anyKey: 'anyValue' })
 ```
 
-Чтобы вывод был в читаемом виде - установить environment как `development`. По умолчанию стоит `production`
+You can set environment key as 'development'. In order to use for dev environment (more comfortable read).
 
-```bash
+```js
 import { createLogger } from './logger'
 
 const logger = createLogger({
@@ -37,4 +32,10 @@ const logger = createLogger({
   },
   environment: 'development'
 })
+```
+
+### How to publish::
+
+```console
+$ npm pub
 ```
